@@ -16,11 +16,11 @@ const (
 
 // Flag describes a CLI flag for a shortcut.
 type Flag struct {
-	Name     string   // e.g. "app-id"
-	Type     string   // "string" (default) | "bool" | "int" | "string_array"
-	Default  string   // default value as string
-	Desc     string   // help text
-	Hidden   bool     // hidden from --help, still readable at runtime
+	Name     string // e.g. "app-id"
+	Type     string // "string" (default) | "bool" | "int" | "string_array"
+	Default  string // default value as string
+	Desc     string // help text
+	Hidden   bool   // hidden from --help, still readable at runtime
 	Required bool
 	Enum     []string // allowed values; empty = unconstrained
 	Input    []string // extra input sources: File (@path), Stdin (-); empty = flag value only

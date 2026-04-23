@@ -212,11 +212,11 @@ var dataCreate = common.Shortcut{
 			return err
 		}
 		req := map[string]interface{}{
-			"app_id":             r.Str("app-id"),
-			"entry_id":           r.Str("entry-id"),
-			"data":               body,
-			"is_start_workflow":  r.Bool("is-start-workflow"),
-			"is_start_trigger":   r.Bool("is-start-trigger"),
+			"app_id":            r.Str("app-id"),
+			"entry_id":          r.Str("entry-id"),
+			"data":              body,
+			"is_start_workflow": r.Bool("is-start-workflow"),
+			"is_start_trigger":  r.Bool("is-start-trigger"),
 		}
 		if v := r.Str("data-creator"); v != "" {
 			req["data_creator"] = v

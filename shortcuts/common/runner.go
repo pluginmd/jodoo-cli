@@ -225,6 +225,11 @@ func runShortcut(cmd *cobra.Command, f *cmdutil.Factory, s *Shortcut) error {
 	}
 	if s.HasFormat {
 		r.Format = r.Str("format")
+		if r.Format != "" {
+			if _, ok := output.ParseFormat(r.Format); !ok {
+				return output.ErrValidation("invalid --format %q (allowed: json, pretty, table, ndjson, csv)", r.Format)
+			}
+		}
 	}
 	r.JqExpr, _ = cmd.Flags().GetString("jq")
 
@@ -260,6 +265,9 @@ func handleDryRun(f *cmdutil.Factory, r *RuntimeContext, s *Shortcut) error {
 	}
 	fmt.Fprintln(f.IOStreams.ErrOut, "=== Dry Run ===")
 	dry := s.DryRun(r.ctx, r)
+	if r.JqExpr != "" {
+		return output.JqFilter(f.IOStreams.Out, dry, r.JqExpr)
+	}
 	if r.Format == "pretty" {
 		fmt.Fprint(f.IOStreams.Out, dry.Format())
 		return nil

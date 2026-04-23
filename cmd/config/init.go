@@ -19,12 +19,12 @@ import (
 
 func newInitCmd(f *cmdutil.Factory) *cobra.Command {
 	var (
-		apiKeyFlag   string
-		baseURLFlag  string
-		profileName  string
-		useKeychain  bool
+		apiKeyFlag     string
+		baseURLFlag    string
+		profileName    string
+		useKeychain    bool
 		nonInteractive bool
-		notes        string
+		notes          string
 	)
 	cmd := &cobra.Command{
 		Use:   "init",

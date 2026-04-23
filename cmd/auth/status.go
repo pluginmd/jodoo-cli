@@ -45,12 +45,12 @@ func newStatusCmd(f *cmdutil.Factory) *cobra.Command {
 			}
 
 			snapshot := map[string]interface{}{
-				"profile":    profile,
-				"has_key":    envKey != "" || fileKey != "" || kcKey != "",
-				"source":     source,
-				"in_config":  fileKey != "",
+				"profile":     profile,
+				"has_key":     envKey != "" || fileKey != "" || kcKey != "",
+				"source":      source,
+				"in_config":   fileKey != "",
 				"in_keychain": kcKey != "",
-				"in_env":     envKey != "",
+				"in_env":      envKey != "",
 			}
 			if jsonOut {
 				output.PrintJson(f.IOStreams.Out, snapshot)

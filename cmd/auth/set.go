@@ -103,6 +103,8 @@ func readSecret(in interface{}, out interface{ Write([]byte) (int, error) }, lab
 	return "", nil
 }
 
-type stdin struct{ r interface{ Read(p []byte) (int, error) } }
+type stdin struct {
+	r interface{ Read(p []byte) (int, error) }
+}
 
 func (s stdin) Read(p []byte) (int, error) { return s.r.Read(p) }

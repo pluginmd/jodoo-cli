@@ -112,9 +112,3 @@ skills/working/     # AI agent skills (isolated workspace)
 docs/               # research.md (Jodoo API specs)
 ```
 
-## Origin & license
-
-Inspired by [`basecli`](https://github.com/larksuite/cli) (MIT). Independent
-implementation for Jodoo. Config dir: `~/.jodoo-cli/`. Env vars use the
-`JODOO_*` prefix. Safe to coexist with `basecli` / `lark-cli` on the same
-machine.

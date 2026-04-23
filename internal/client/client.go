@@ -306,12 +306,12 @@ func toInt(v interface{}) (int, bool) {
 
 // FileUploadRequest describes a Jodoo file upload (Step 2 of the file flow).
 type FileUploadRequest struct {
-	URL      string // absolute URL returned by /v5/app/entry/file/get_upload_token
-	Token    string // token returned alongside URL
-	FilePath string // local file to upload (mutually exclusive with FileBytes)
+	URL       string // absolute URL returned by /v5/app/entry/file/get_upload_token
+	Token     string // token returned alongside URL
+	FilePath  string // local file to upload (mutually exclusive with FileBytes)
 	FileBytes []byte
-	FileName string // optional; defaults to basename(FilePath)
-	Timeout  time.Duration
+	FileName  string // optional; defaults to basename(FilePath)
+	Timeout   time.Duration
 }
 
 // UploadFile performs the multipart POST to a per-token upload URL.
