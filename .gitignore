@@ -1,0 +1,30 @@
+# Compiled binary
+/jodoo-cli
+jodoo-cli.exe
+
+# Go build artifacts
+*.test
+*.out
+*.prof
+vendor/
+
+# IDE / editor
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Env / secrets
+.env
+.env.*
+*.local
+
+# Logs
+*.log
+
+# Claude local state
+.claude/settings.local.json
