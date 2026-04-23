@@ -27,6 +27,12 @@ func providers() []Provider {
 	return []Provider{jodooProvider{}}
 }
 
+// Providers exposes the registered bundles to callers outside this package
+// (the MCP layer iterates them to build its tool registry).
+func Providers() []Provider {
+	return providers()
+}
+
 type jodooProvider struct{}
 
 func (jodooProvider) Service() string { return "jodoo" }

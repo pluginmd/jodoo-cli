@@ -14,6 +14,7 @@ import (
 	"jodoo-cli/cmd/auth"
 	cmdconfig "jodoo-cli/cmd/config"
 	"jodoo-cli/cmd/doctor"
+	jodoomcp "jodoo-cli/cmd/mcp"
 	"jodoo-cli/cmd/profile"
 	"jodoo-cli/internal/build"
 	"jodoo-cli/internal/cmdutil"
@@ -89,6 +90,7 @@ func Execute() int {
 	rootCmd.AddCommand(profile.NewCmdProfile(f))
 	rootCmd.AddCommand(doctor.NewCmdDoctor(f))
 	rootCmd.AddCommand(api.NewCmdApi(f))
+	rootCmd.AddCommand(jodoomcp.NewCmdMcp(f))
 	shortcuts.RegisterShortcuts(rootCmd, f)
 
 	if err := rootCmd.Execute(); err != nil {
